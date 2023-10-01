@@ -1,0 +1,24 @@
+<h1>{{title}}</h1>
+
+{% if AUthors is defined and AUthors|length > 0 %}
+<table>
+    <tr>
+        <th> ID </th>
+        <th> Username </th>
+    </tr>
+{% for author in AUthors %}
+    <tr>
+        <td> {{author.id}} </td>
+        <td> {{author.username|upper}} </td>
+        <td>  <a href="{{ path('app_author_Details' , {'id': author.id})}}"> Details </a> </td>
+    </tr>
+{%endfor%}
+</table>
+{% else %}
+<h3> No Authors found! </h3>
+{% endif %}
+
+<h3> Nombre total des auteurs est : {{ AUthors|length }}</h3>
+
+<h3> Le nombre total des livres de tous les auteurs est : {{ totalBooks }}</h3>
+    

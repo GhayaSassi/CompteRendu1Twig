@@ -1,0 +1,18 @@
+<table>
+    <tr>
+        <th> Nom </th>
+        <th> Photo </th>
+        <th> Email </th>
+        <th> Nombre de livres </th>
+    </tr>
+{% for author in Auth %}
+{% if id==author.id %}
+    <tr>
+        <td> {{author.username}} </td>
+        <td> <img src={{author.picture}}> </td>
+        <td> {{author.email}} </td>
+        <td> {{author.nb_books}} </td>
+    </tr>
+{% endif %}
+{%endfor%}
+</table>
